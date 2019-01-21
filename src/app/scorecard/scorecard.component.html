@@ -1,0 +1,57 @@
+<h1>ScoreCard</h1>
+<div class="container">
+   <div class="row md-8">
+      <div class="card w-100 mt-2 ">
+         <div class="card-header">
+            <h3><span>(</span>{{matchService.getMatch().getTotalRuns()}}<span>/</span>{{matchService.getMatch().getTotalWickets()}}<span>)</span></h3>
+            <h3 *ngIf="previosInningScore">{{matchService.getMatch().getBattingTeamName()}}({{matchService.getMatch().getFirstInningRuns()}}/{{matchService.getMatch().getFirstInningWicket()}})</h3>
+         </div>
+         <div class="card-body">
+            <table class="table">
+               <thead class="table-primary">
+                  <tr>
+                     <td><b>Batting Team</b></td>
+                     <td><b>-</b></td>
+                  </tr>
+                  <tr>
+                     <th scope="col">Batsman</th>
+                     <th scope="col">Run</th>
+                     <th scope="col">Ball</th>
+                     <th scope="col">Strike Rate</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr *ngFor="let batsmanName of matchService.getMatch().getBattingTeam().getPlayer();">
+                     <td>{{batsmanName.name}}*</td>
+                     <td>-</td>
+                     <td>-</td>
+                     <td>-</td>
+                  </tr>
+               </tbody>
+            </table>
+            <table class="table">
+               <thead class="table-primary">
+                  <tr>
+                     <td><b>Bowling Team</b></td>
+                     <td><b>{{matchService.getMatch().getBowlingTeamName()}}</b></td>
+                  </tr>
+                  <tr>
+                     <th scope="col">Bowler</th>
+                     <th scope="col">W</th>
+                     <th scope="col">M</th>
+                     <th scope="col">OV</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr *ngFor="let bowlerName of matchService.getMatch().getBowlingTeam().getPlayer()">
+                     <td>{{bowlerName.name}}</td>
+                     <td>-</td>
+                     <td>-</td>
+                     <td>-</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+   </div>
+</div>

@@ -23,6 +23,7 @@
               "src/assets"
             ],
             "styles": [
+              "/home/sushantr/Untitled Folder/CricketApplication/node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
